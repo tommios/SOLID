@@ -4,7 +4,7 @@
 
 class Shape {
     area() {
-        throw new Error('Area method shoud be implemented');
+        throw new Error('Area method should be implemented');
     }
 }
 
@@ -19,18 +19,39 @@ class Square extends Shape {
     }
 }
 
-class Circle {
+class Circle extends Shape {
     constructor(radius) {
-        this.type = 'circle';
+        super();
         this.radius = radius;
+    }
+
+    area() {
+        return (this.radius ** 2) * Math.PI;
     }
 }
 
-class Rect {
+class Rect extends Shape {
     constructor(width, height) {
-        this.type = 'rect';
+        super();
         this.width = width;
         this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+}
+
+// Rectangular triangle
+class Triangle extends Shape {
+    constructor(a, b) {
+        super();
+        this.a = a;
+        this.b = b;
+    }
+
+    area() {
+        return (this.a * this.b) / 2;
     }
 }
 
@@ -41,14 +62,7 @@ class AreaCalculator {
 
     sum() {
         return this.shapes.reduce((accumulator, shape) => {
-            if (shape.type === 'circle') {
-                accumulator += (shape.radius ** 2) * Math.PI;
-            } else if (shape.type === 'square') {
-                accumulator += shape.size ** 2;
-            } else if (shape.type === 'rect') {
-                accumulator += shape.width * shape.height;
-            }
-
+            accumulator += shape.area();
             return accumulator;
         }, 0);
     }
@@ -57,7 +71,9 @@ class AreaCalculator {
 const calc = new AreaCalculator([
     new Square(10),
     new Circle(1),
-    new Circle(5)
+    new Circle(5),
+    new Rect (10,20),
+    new Triangle(10, 15)
 ]);
 
 const calc1 = new AreaCalculator([
