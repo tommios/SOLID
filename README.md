@@ -1,7 +1,7 @@
 #                                                 SOLID
                       Examples of the implementation of the principles of SOLID on JavaScript
 
-#### S - The Single Responsibility Principle   ( SRP )**  Принцип единственной ответственности;
+#### S - The Single Responsibility Principle   ( SRP )  Принцип единственной ответственности;
 
 #### O - The Open Closed Principle             ( OCP )  Принцип открытости/закрытости;
 
