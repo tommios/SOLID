@@ -2,10 +2,20 @@
 //    Принцип Открытости/Закрытости:
 //  Программные сущности ... должны быть открыты для расширения, но закрыты для модификации
 
-class Square {
+class Shape {
+    area() {
+        throw new Error('Area method shoud be implemented');
+    }
+}
+
+class Square extends Shape {
     constructor(size) {
-        this.type = 'square';
+        super();
         this.size = size;
+    }
+
+    area() {
+        return this.size ** 2;
     }
 }
 
