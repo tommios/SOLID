@@ -16,6 +16,14 @@ class Circle {
     }
 }
 
+class Rect {
+    constructor(width, height) {
+        this.type = 'rect';
+        this.width = width;
+        this.height = height;
+    }
+}
+
 class AreaCalculator {
     constructor(shapes = []) {
         this.shapes = shapes;
@@ -27,21 +35,29 @@ class AreaCalculator {
                 accumulator += (shape.radius ** 2) * Math.PI;
             } else if (shape.type === 'square') {
                 accumulator += shape.size ** 2;
+            } else if (shape.type === 'rect') {
+                accumulator += shape.width * shape.height;
             }
+
             return accumulator;
         }, 0);
     }
 }
 
 const calc = new AreaCalculator([
-    new Square (10),
+    new Square(10),
     new Circle(1),
     new Circle(5)
 ]);
 
 const calc1 = new AreaCalculator([
-    new Square (10)
+    new Square(10)
+]);
+
+const calc2 = new AreaCalculator([
+    new Rect(20, 10)
 ]);
 
 console.log(calc.sum());
 console.log(calc1.sum());
+console.log(calc2.sum());
