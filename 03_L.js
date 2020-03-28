@@ -20,9 +20,16 @@ class Backend extends Person {
     }
 }
 
-function openSecretDoor(person){
+class PersonFromDifferentCompany extends Person {
+    access() {
+        throw new Error('У тебя нет доступа! Иди к себе!');
+    }
+}
+
+function openSecretDoor(person) {
     person.access();
 }
 
 openSecretDoor(new Frontend());
 openSecretDoor(new Backend());
+openSecretDoor(new PersonFromDifferentCompany());
