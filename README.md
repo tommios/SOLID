@@ -1,4 +1,4 @@
-#                                                 SOLID
+#<pre>                                                 SOLID  </pre>
                       Examples of the implementation of the principles of SOLID on JavaScript
 
 #### <pre>S - *The Single Responsibility Principle*   ( SRP )  Принцип единственной ответственности;</pre>  
