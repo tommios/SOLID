@@ -1,4 +1,4 @@
-# SOLID
+#                                                 SOLID
                       Examples of the implementation of the principles of SOLID on JavaScript
 
 ### S - The Single Responsibility Principle   ( SRP )  Принцип единственной ответственности;
