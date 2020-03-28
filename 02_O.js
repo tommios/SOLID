@@ -33,3 +33,15 @@ class AreaCalculator {
     }
 }
 
+const calc = new AreaCalculator([
+    new Square (10),
+    new Circle(1),
+    new Circle(5)
+]);
+
+const calc1 = new AreaCalculator([
+    new Square (10)
+]);
+
+console.log(calc.sum());
+console.log(calc1.sum());
