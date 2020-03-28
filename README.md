@@ -3,7 +3,7 @@
 
 ## S - The Single Responsibility Principle   ( SRP )  Принцип единственной ответственности;
 
-# O - The Open Closed Principle             ( OCP )  Принцип открытости/закрытости;
+### O - The Open Closed Principle             ( OCP )  Принцип открытости/закрытости;
 
 # L - The Liskov Substitution Principle     ( LSP )  Принцип подстановки Барбары Лисков;
 
