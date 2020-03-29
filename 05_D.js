@@ -16,17 +16,40 @@ class LocalStorage {
     }
 }
 
-class Database {
+class FetchClient {
     constructor() {
-        //this.fetch = new Fetch();
-        this.localStorage = new LocalStorage();
+        this.fetch = new Fetch();
     }
 
-    getData(){
-        //return this.fetch.request('vk.com');
-        return this.localStorage.get('ls key');
+    clientGet(key) {
+        return this.fetch.request(key);
     }
 }
 
-const db = new Database();
-console.log(db.getData());
+class LocalStorageClient {
+    constructor() {
+        this.localStorage = new LocalStorage();
+    }
+
+    clientGet(key) {
+        return this.localStorage.get(key);
+    }
+}
+
+class Database {
+    constructor(client) {
+        this.client = client;
+    }
+
+    getData(key) {
+        return this.client.clientGet(key);
+    }
+}
+
+const db = new Database(new LocalStorageClient());
+console.log(db.getData('random'));
+
+console.log();
+
+const db1 = new Database(new FetchClient());
+console.log(db1.getData('vk.com'));
