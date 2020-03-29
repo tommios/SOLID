@@ -61,11 +61,13 @@ class HigherOrderComponent extends Component {
 }
 
 class HeaderComponent extends ComponentWithTemplate {
-    onInit() {}
+    onInit() {
+    }
 }
 
 class FooterComponent extends ComponentWithTemplate {
-    afterInit() {}
+    afterInit() {
+    }
 }
 
 class HOC extends HigherOrderComponent {
